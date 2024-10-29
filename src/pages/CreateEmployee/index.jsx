@@ -49,7 +49,7 @@ export default function CreateEmployee() {
     <main>
       <Header title={"HRnet"} />
       <div className="container">
-        <Link to="/employee-list">View Current Employees</Link>
+        <Link className="navLink" to="/employee-list">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form onSubmit={submitForm} id="create-employee">
           <div className="name-date-fieldset-container">

@@ -64,3 +64,7 @@ input {
 .name-date-fieldset-container{
     display: flex;
 }
+
+.navLink{
+  margin: auto;
+}
