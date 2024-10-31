@@ -11,8 +11,12 @@ import Employee from "../../models/Employee";
 import { useDispatch } from "react-redux";
 import { createNewEmployee } from "../../store/Slices/employeeSlice";
 
+/**
+ * Génère la page de création d'un nouvel employé
+ * @returns {ReactDOM}
+ */
 export default function CreateEmployee() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [startDate, setStartDate] = useState();
   const [birthDate, setBirthDate] = useState();
   const [modalIsopen, setModalIsopen] = useState(false);
@@ -31,6 +35,15 @@ export default function CreateEmployee() {
 
     // Convertit les données en un objet JSON
     const formValues = Object.fromEntries(data.entries());
+
+    //Vérifie que tout les champs ont été remplis
+    const allFieldsFilled = Object.values(formValues).every(
+      (value) => value.trim() !== ""
+    );
+    if (!allFieldsFilled) {
+      alert("Attention, tous les champs n'ont pas été remplis");
+      return;
+    }
     const newEmployee = new Employee(
       formValues["first-name"],
       formValues["last-name"],
@@ -49,7 +62,9 @@ export default function CreateEmployee() {
     <main>
       <Header title={"HRnet"} />
       <div className="container">
-        <Link className="navLink" to="/employee-list">View Current Employees</Link>
+        <Link className="navLink" to="/employee-list">
+          View Current Employees
+        </Link>
         <h2>Create Employee</h2>
         <form onSubmit={submitForm} id="create-employee">
           <div className="name-date-fieldset-container">

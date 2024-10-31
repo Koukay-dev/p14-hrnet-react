@@ -9,10 +9,10 @@ const persistConfig = {
     storage
 }
 
-
 const persistedReducer = persistReducer(persistConfig, combineReducers({
     employee: employeeSlice.reducer,
 }));
+
 
 export const store = configureStore({
     initialState: {},
@@ -25,5 +25,8 @@ export const store = configureStore({
         })
 });
 
+/**
+ * Permet au store de sauvegarder son état entre les sessions
+ */
 export const persistor = persistStore(store);
 
