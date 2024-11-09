@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.8.1",
     "redux-persist": "^6.0.0",
+    "simple-react-modal-ocp14": "^1.0.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

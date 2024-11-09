@@ -1,5 +1,4 @@
 import Header from "../../components/Header";
-import Modal from "../../components/Modal";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -10,6 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Employee from "../../models/Employee";
 import { useDispatch } from "react-redux";
 import { createNewEmployee } from "../../store/Slices/employeeSlice";
+import SimpleModal from "simple-react-modal-ocp14";
 
 /**
  * Génère la page de création d'un nouvel employé
@@ -130,7 +130,7 @@ export default function CreateEmployee() {
           <button type="submit">Save</button>
         </form>
       </div>
-      <Modal
+      <SimpleModal
         text={"Employee successfully created!"}
         isOpen={modalIsopen}
         closeModal={closeModal}
