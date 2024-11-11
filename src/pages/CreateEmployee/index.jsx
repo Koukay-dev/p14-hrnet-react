@@ -84,6 +84,7 @@ export default function CreateEmployee() {
                 showYearDropdown
                 scrollableYearDropdown
                 yearDropdownItemNumber={100}
+                dateFormat="yyyy-MM-dd"
                 selected={birthDate}
                 onChange={(date) => setBirthDate(date)}
               />
@@ -97,6 +98,7 @@ export default function CreateEmployee() {
                 showYearDropdown
                 scrollableYearDropdown
                 yearDropdownItemNumber={15}
+                dateFormat="yyyy-MM-dd"
                 placeholderText="Starting date"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
